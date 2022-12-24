@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,11 +26,9 @@ class MainActivity : AppCompatActivity() {
 
         rvMoviesList = findViewById(R.id.rvMoviesList)
         progressBar = findViewById(R.id.progressBar)
-        rvMoviesList.layoutManager = GridLayoutManager(this, 2)
-
+        rvMoviesList.layoutManager = LinearLayoutManager(this)
         adapter = MoviesAdapter(moviesList, this)
         rvMoviesList.adapter = adapter
-
         getMovies()
     }
 
